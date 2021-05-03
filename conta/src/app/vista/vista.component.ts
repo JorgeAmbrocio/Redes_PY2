@@ -24,13 +24,43 @@ export class VistaComponent implements OnInit {
   } ;
 
   
-
   constructor(
     private _servicio:BackService
   ) 
-  { }
+  {
+    this.getConsulta()
+  }
 
   ngOnInit(): void {
+    this._servicio.getConsulta().subscribe(o => {
+      this.datos = o
+    })
+  }
+
+  getConsulta():void{
+    console.log('Cargando datos')
+    this._servicio.getConsulta().subscribe(o => {
+      console.log('Respuesta get')
+      console.log(o)
+      this.datos = o
+    })
+  }
+
+  setConsultas():void{
+    console.log('Botón presionado')
+    this._servicio.setConsulta(this.newProd).subscribe(o =>{
+      console.log('Respuesta set')
+      console.log(o)
+      this.getConsulta()
+      this.newProd = {
+        idProducto:0,
+        titulo:'',
+        descripcion:'',
+        autor:'',
+        anio:0
+      }
+    })
+    
   }
 
 }
