@@ -1,0 +1,90 @@
+<br><br>
+<div class="row">
+    <div class="col-12 page-header">
+        <div class="text-center">
+            <h1>Ventas</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="page-header">
+        <div class="text-center">
+            <h1 class="mt-5">
+                Administrador de ventas
+            </h1>
+            <p class="lead">
+                En éste apartado se pueden crear las ventas nuevas asignando a un usuario y un producto
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6">
+                    <h3>Producto</h3>
+                </div>
+                <div class="col-6">
+                    <select class="form-select" 
+                        aria-label="Default select example"
+                        (change)="changeOptionProducto($event.target)">
+                        <option *ngFor="let producto of productos; let i = index;" 
+                        value="{{producto.idProducto}}">
+                            {{producto.titulo}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6">
+                    <h3>Vendedor</h3>
+                </div>
+                <div class="col-6">
+                    <select class="form-select" 
+                        aria-label="Default select example"
+                        (change)="changeOptionVendedor($event.target)">
+                        <option *ngFor="let vendedor of vendedores; let i = index;" 
+                        value="{{vendedor.idVendedor}}"
+                        (change)="newVenta.idVendedor = vendedor.idVendedor;">
+                            {{vendedor.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary" (click)="setConsultas()">Cargar nueva venta</button>
+        </div>
+    </div>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    ID Vendedor
+                </th>
+                <th scope="col">
+                    Nombre
+                </th>
+                <th scope="col">
+                    ID Libro
+                </th>
+                <th scope="col">
+                    Título
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of datos; let indexOf = index;">
+                <td>{{row.idVendedor}}</td>
+                <td>{{row.nombre}}</td>
+                <td>{{row.idProducto}}</td>
+                <td>{{row.titulo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
