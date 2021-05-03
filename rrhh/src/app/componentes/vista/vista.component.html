@@ -1,0 +1,80 @@
+<br><br>
+<div class="row">
+    <div class="col-12 page-header">
+        <div class="text-center">
+            <h1>Recursos Humanos</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="page-header">
+        <div class="text-center">
+            <h1 class="mt-5">
+                Administrador de Vendedores
+            </h1>
+            <p class="lead">
+                En éste apartado puedes crear y ver los Vendedores
+            </p>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    ID
+                </th>
+                <th scope="col">
+                    DPI
+                </th>
+                <th scope="col">
+                    Nombre
+                </th>
+                <th scope="col">
+                    Apellido
+                </th>
+                <th scope="col">
+                    Direccion
+                </th>
+                <th scope="col">
+                    Telefono
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    #
+                </td>
+                <td>
+                    <input type="text" placeholder="dpi" [(ngModel)]="newVend.dpi" >
+                </td>
+                <td>
+                    <input type="text" placeholder="nombre" [(ngModel)]="newVend.nombre" >
+                </td>
+                <td>
+                    <input type="text" placeholder="apellido" [(ngModel)]="newVend.apellido" >
+                </td>
+                <td>
+                    <input type="text" placeholder="direccion" [(ngModel)]="newVend.direccion">
+                </td>
+                <td>
+                    <input type="text" placeholder="telefono" [(ngModel)]="newVend.telefono">
+                </td>
+                <td>
+                    <div class="col-4">
+                        <button class="btn btn-primary">Guardar</button>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let row of registros; let indexOf = index;">
+                <th scope="row">{{row.idVendedor}}</th>
+                <td>{{row.dpi}}</td>
+                <td>{{row.nombre}}</td>
+                <td>{{row.apellido}}</td>
+                <td>{{row.direccion}}</td>
+                <td>{{row.telefono}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
