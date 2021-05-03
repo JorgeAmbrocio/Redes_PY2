@@ -25,7 +25,10 @@ export class VistaComponent implements OnInit {
 
   
 
-  constructor(private _servicio:BackService) { }
+  constructor(
+    private _servicio:BackService
+  ) 
+  { }
 
   ngOnInit(): void {
   }
