@@ -16,12 +16,12 @@ export class SolicitudService {
 
   s1():Observable<any>
   {
-    const url = "http://127.0.0.1:3030/vendedor";
+    const url = "http://192.168.7.34:3030/vendedor";
     return this.http.get(url);
   }
 
   setConsulta(sellman:Vendedor): Observable<any> {
-    return this.http.post("http://127.0.0.1:3030/vendedor", sellman);
+    return this.http.post("http://192.168.7.34:3030/vendedor", sellman);
   }
 }
 
