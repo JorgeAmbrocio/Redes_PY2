@@ -1,0 +1,84 @@
+<br><br>
+<div class="row">
+    <div class="col-12 page-header">
+        <div class="text-center">
+            <h1>Contabilidad</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="page-header">
+        <div class="text-center">
+            <h1 class="mt-5">
+                Administrador de usuarios
+            </h1>
+            <p class="lead">
+                En éste apartado puedes crear y ver usuarios
+            </p>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    ID
+                </th>
+                <th scope="col">
+                    Titulo
+                </th>
+                <th scope="col">
+                    Descripcion
+                </th>
+                <th scope="col">
+                    Autor
+                </th>
+                <th scope="col">
+                    Año
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    #
+                </td>
+                <td>
+                    <input type="text" 
+                        placeholder="titulo" 
+                        [(ngModel)]="newProd.titulo">
+                </td>
+                <td>
+                    <input type="text" 
+                        placeholder="descripcion" 
+                        [(ngModel)]="newProd.descripcion">
+                </td>
+                <td>
+                    <input type="text" 
+                        placeholder="autor" 
+                        [(ngModel)]="newProd.autor">
+                </td>
+                <td>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" 
+                                placeholder="año"
+                                class="txtAnio" 
+                                [(ngModel)]="newProd.anio">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let row of datos; let indexOf = index;">
+                <th scope="row">{{row.idProducto}}</th>
+                <td>{{row.titulo}}</td>
+                <td>{{row.descripcion}}</td>
+                <td>{{row.autor}}</td>
+                <td>{{row.anio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
